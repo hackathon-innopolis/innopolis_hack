@@ -1,10 +1,12 @@
 from PIL import Image
+
+
 # from smth import coordinate
 
 
 def convert(coordniate):
-    coordinate[0] = (coordniate[0] - 56.8) / 0.1 * 8506
-    coordinate[1] = (coordniate[1] - 60.5) / 0.2 * 9322
+    coordinate[0] = int(((coordniate[0] - 56.8) / 0.1 * 8506) % 1)
+    coordinate[1] = int(((coordniate[1] - 60.5) / 0.2 * 9322) % 1)
     return coordniate
 
 

@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view){
         SQLiteDatabase database = dbHelper.getWritableDatabase();
+        TextView profwishes;
+        int countIndex;
         switch (view.getId()){
             case R.id.grant:
                 Log.d("Move", "Moved to granting");
@@ -90,17 +93,42 @@ public class MainActivity extends AppCompatActivity {
                 cursor.close();
                 break;
             case R.id.btnHistBack:
+            case R.id.profileBack:
                 setContentView(R.layout.activity_main);
+                Cursor cursorTwo = database.query(DBHelper.TABLE_USERS, null, null, null, null, null, null);
+                wishes = findViewById(R.id.textView);
+                cursorTwo.moveToFirst();
+                countIndex = cursorTwo.getColumnIndex(DBHelper.KEY_WISH_COUNT);
+                wishesCount = cursorTwo.getInt(countIndex);
                 wishes.setText(String.format("Осталось желаний: %d", wishesCount));
+                cursorTwo.close();
                 break;
             case R.id.btnProfile:
-                //TODO
+                setContentView(R.layout.profile);
+                profwishes = findViewById(R.id.wishesLeft);
+                Cursor cursorprof = database.query(DBHelper.TABLE_USERS, null, null, null, null, null, null);
+                cursorprof.moveToFirst();
+                countIndex = cursorprof.getColumnIndex(DBHelper.KEY_WISH_COUNT);
+                wishesCount = cursorprof.getInt(countIndex);
+                profwishes.setText(String.format("Осталось желаний: %d", wishesCount));
+                TextView username = findViewById(R.id.textView4);
+                username.setText(cursorprof.getString(cursorprof.getColumnIndex(DBHelper.KEY_USER)));
                 break;
             case R.id.btnClear:
                 TextView TV2 = findViewById(R.id.textView3);
                 database.delete(DBHelper.TABLE_WISHES, null, null);
                 output = "Вы ничего не желали!";
                 TV2.setText(output);
+                break;
+            case R.id.btnBuy:
+                EditText ET = findViewById(R.id.wishesToBuy);
+                int bought = Integer.parseInt(ET.getText().toString());
+                ContentValues cv = new ContentValues();
+                wishesCount += bought;
+                cv.put(DBHelper.KEY_WISH_COUNT, wishesCount);
+                database.update(DBHelper.TABLE_USERS, cv, null, null);
+                profwishes = findViewById(R.id.wishesLeft);
+                profwishes.setText(String.format("Осталось желаний: %d", wishesCount));
                 break;
         }
     }

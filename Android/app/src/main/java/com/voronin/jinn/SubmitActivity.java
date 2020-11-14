@@ -82,7 +82,7 @@ public class SubmitActivity extends AppCompatActivity {
         Bundle arguments = getIntent().getExtras();
         int wishCount = Integer.parseInt(arguments.get("wishCount").toString());
         System.out.println(wishCount);
-        cv.put(DBHelper.KEY_WISH_COUNT, wishCount + 20);
+        cv.put(DBHelper.KEY_WISH_COUNT, wishCount - 1);
         database.update(DBHelper.TABLE_USERS, cv, null, null);
         cursor.close();
         setResult(RESULT_OK);

@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new DBHelper(this);
         SQLiteDatabase database = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        //TODO get info from server
         Cursor cursor = database.query(DBHelper.TABLE_USERS, null, null, null, null, null, null);
         if(!cursor.moveToFirst()){
             contentValues.put(DBHelper.KEY_USER, user);

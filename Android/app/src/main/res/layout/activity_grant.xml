@@ -60,4 +60,14 @@
         app:srcCompat="@android:drawable/ic_media_previous"
         android:focusable="true" />
 
+    <Button
+        android:id="@+id/btnChoose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="@string/choosen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnForward"
+        app:layout_constraintStart_toEndOf="@+id/btnBack" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,8 +14,8 @@ import android.widget.TextView;
 
 public class SubmitActivity extends AppCompatActivity {
 
-    EditText wishToSend;
-    DBHelper dbHelper;
+    private EditText wishToSend;
+    private DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

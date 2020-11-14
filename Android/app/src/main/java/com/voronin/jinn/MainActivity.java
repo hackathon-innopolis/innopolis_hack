@@ -17,11 +17,11 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView wishes;
-    DBHelper dbHelper;
-    int wishesCount = 0;
-    String user = "user";
-    String password = "qwerty";
+    private TextView wishes;
+    private DBHelper dbHelper;
+    private int wishesCount = 1;
+    private String user = "user";
+    private String password = "qwerty";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

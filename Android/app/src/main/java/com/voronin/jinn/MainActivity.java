@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private int wishesCount = 1;
     private String user = "user";
     private String password = "qwerty";
+    private String output;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,38 @@ public class MainActivity extends AppCompatActivity {
                     intent_submit.putExtra("wishCount", wishesCount);
                     startActivityForResult(intent_submit, 101);
                 }
+                break;
+            case R.id.btnHistory:
+                output = "";
+                setContentView(R.layout.hist);
+                TextView TV = findViewById(R.id.textView3);
+                Cursor cursor = database.query(DBHelper.TABLE_WISHES, null, null, null, null, null, null);
+                int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID);
+                int userIndex = cursor.getColumnIndex(DBHelper.KEY_USER);
+                int wishIndex = cursor.getColumnIndex(DBHelper.KEY_WISH);
+                if (cursor.moveToFirst()) {
+                    do {
+                        output += cursor.getInt(idIndex) + " - " + cursor.getString(wishIndex) + "\n";
+                    } while (cursor.moveToNext());
+                }
+                else {
+                    output = "Вы ничего не желали!";
+                }
+                TV.setText(output);
+                cursor.close();
+                break;
+            case R.id.btnHistBack:
+                setContentView(R.layout.activity_main);
+                wishes.setText(String.format("Осталось желаний: %d", wishesCount));
+                break;
+            case R.id.btnProfile:
+                //TODO
+                break;
+            case R.id.btnClear:
+                TextView TV2 = findViewById(R.id.textView3);
+                database.delete(DBHelper.TABLE_WISHES, null, null);
+                output = "Вы ничего не желали!";
+                TV2.setText(output);
                 break;
         }
     }

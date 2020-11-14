@@ -8,4 +8,7 @@
     <string name="choose">Выбери задание</string>
     <string name="choosen">Выбрать</string>
     <string name="profile">профиль</string>
+    <string name="history">История</string>
+    <string name="back">Назад</string>
+    <string name="clear">Очистить</string>
 </resources>

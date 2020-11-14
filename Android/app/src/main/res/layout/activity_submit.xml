@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SubmitActivity">
+    tools:context=".SubmitActivity"
+    android:background="#D5EFF0">
 
     <EditText
         android:id="@+id/wish"
@@ -23,9 +24,14 @@
         android:id="@+id/btnSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/send"
+        android:layout_marginTop="50dp"
+        android:width="180dp"
+        android:height="180dp"
+        android:fontFamily="@font/robotoregular"
         android:onClick="onClick"
+        android:text="@string/send"
+        android:textSize="22sp"
+        app:backgroundTint="#03A9F4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wish" />

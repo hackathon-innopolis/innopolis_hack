@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Арсен Воронинман ибн Вадим</string>
-    <string name="grant_a_wish">ИСПОЛНИТЬ ЖЕЛАНИЕ</string>
-    <string name="submit">ЗАГАДАТЬ ЖЕЛАНИЕ</string>
+    <string name="grant_a_wish">ИСПОЛНИТЬ</string>
+    <string name="submit">ЗАГАДАТЬ</string>
     <string name="wishesLeft">Осталось желание: 0</string>
     <string name="wish">Желание</string>
     <string name="send">Отправить</string>

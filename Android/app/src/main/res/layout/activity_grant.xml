@@ -22,7 +22,7 @@
 
     <TextView
         android:id="@+id/book"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
         android:text="FILLER"
         android:textSize="24sp"
@@ -40,11 +40,12 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"
         android:clickable="true"
+        android:focusable="true"
         android:onClick="onClick"
+        app:backgroundTint="#838282"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_media_next"
-        android:focusable="true" />
+        app:srcCompat="@drawable/frwar" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnBack"
@@ -54,11 +55,12 @@
         android:layout_marginLeft="24dp"
         android:layout_marginBottom="24dp"
         android:clickable="true"
+        android:focusable="true"
         android:onClick="onClick"
+        app:backgroundTint="#838282"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_media_previous"
-        android:focusable="true" />
+        app:srcCompat="@drawable/frwback" />
 
     <Button
         android:id="@+id/btnChoose"
@@ -66,6 +68,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
         android:text="@string/choosen"
+        android:width="110dp"
+        android:height="100dp"
+        app:backgroundTint="#838282"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnForward"
         app:layout_constraintStart_toEndOf="@+id/btnBack" />

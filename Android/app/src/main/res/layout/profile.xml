@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#A9FFAC">
 
     <TextView
         android:id="@+id/textView4"
@@ -54,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/buy"
+        app:backgroundTint="#58EC79"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/wishesToBuy"
         app:layout_constraintTop_toBottomOf="@+id/wishesLeft" />
@@ -77,6 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="125dp"
         android:onClick="onClick"
+        app:backgroundTint="#58EC79"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

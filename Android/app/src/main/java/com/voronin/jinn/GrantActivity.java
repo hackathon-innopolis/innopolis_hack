@@ -79,6 +79,11 @@ public class GrantActivity extends AppCompatActivity {
                 updateScreen();
                 break;
             case R.id.btnChoose:
+                setContentView(R.layout.map);
+                break;
+            case R.id.mapBack:
+                setContentView(R.layout.activity_grant);
+                updateScreen();
                 break;
         }
     }
